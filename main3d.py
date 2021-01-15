@@ -1,5 +1,3 @@
-from  matplotlib.backends.backend_qt5agg  import  ( NavigationToolbar2QT  as  NavigationToolbar )
-
 import numpy as np
 
 import sys
@@ -8,7 +6,8 @@ from calculator import calculator
 import calculator as fk
 from MainUI import *
 
-class testqt5(Ui_MainWindow):
+
+class main3d(Ui_MainWindow):
     dhTable = fk.dhTable
     count = 0
     row = 0
@@ -143,7 +142,7 @@ class testqt5(Ui_MainWindow):
 
     def draw(self):
         Tm=calculator.dh_kine(self.dhTable, self.count)
-        ee=calculator.el_xyzpos(Tm, self.count)
+        ee=calculator.xyzpos(Tm, self.count)
         x,y,z = ee[0,:],ee[1,:],ee[2,:]
 
         self.MplWidget.canvas.axes.clear()
@@ -238,6 +237,6 @@ class testqt5(Ui_MainWindow):
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow=QtWidgets.QMainWindow()
-ui=testqt5(MainWindow)
+ui=main3d(MainWindow)
 MainWindow.show()
 app.exec_()

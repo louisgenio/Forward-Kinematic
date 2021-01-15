@@ -1,6 +1,4 @@
 import numpy as np
-from mpl_toolkits.mplot3d import axes3d
-import matplotlib.pyplot as plt
 
 dhTable = ([])
 
@@ -29,20 +27,20 @@ class calculator:
         return stack
 
     def xyzpos(stack, count):
-        X = np.array([0])
-        Y = np.array([0])
-        Z = np.array([0])
+        x = np.array([0])
+        y = np.array([0])
+        z = np.array([0])
 
         for i in range(3, count*4, 4):
             if i == 3:
-                X = np.concatenate((X[:], [stack[0, i], stack[0, i]]))
-                Y = np.concatenate((Y[:], [stack[1, i], stack[1, i]]))
-                Z = np.concatenate((Z[:], [stack[2, i], stack[2, i]]))
+                X = np.concatenate((x[:], [stack[0, i], stack[0, i]]))
+                Y = np.concatenate((y[:], [stack[1, i], stack[1, i]]))
+                Z = np.concatenate((z[:], [stack[2, i], stack[2, i]]))
             else:
-                X = np.concatenate((X[:], [stack[0, i]]))
-                Y = np.concatenate((Y[:], [stack[1, i]]))
-                Z = np.concatenate((Z[:], [stack[2, i]]))
-        return np.vstack((X, Y, Z))
+                X = np.concatenate((x[:], [stack[0, i]]))
+                Y = np.concatenate((y[:], [stack[1, i]]))
+                Z = np.concatenate((z[:], [stack[2, i]]))
+        return np.vstack((x, y, z))
 
     def pos2base(Q):
         X,Y,Z=Q[0,:],Q[1,:],Q[2,:]
@@ -50,3 +48,6 @@ class calculator:
         for i in range(Q):
             pos = np.array([X[i]], Y[i]. Z[i])
         return pos
+
+    def __getitem__(self, item):
+        return dhTable
