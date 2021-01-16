@@ -53,7 +53,6 @@ class main3d(Ui_MainWindow):
         self.tableWidget2.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
 
     # def onkey(self, event):
-    #     print("berhasil")
 
     def insertDH(self):
         self.tableWidget.blockSignals(True)
@@ -128,8 +127,8 @@ class main3d(Ui_MainWindow):
         self.comboBox.setEnabled(True)
         self.hslider.setProperty("value", self.tableWidget.item(self.index, 0).text())
         self.hslider2.setProperty("value", self.tableWidget.item(self.index, 1).text())
-        self.labels5.setText("Joint Angle: " + str(self.tableWidget.item(0, 0).text()) + u'\N{DEGREE SIGN}')
-        self.labels6.setText("Joint Angle: " + str(self.tableWidget.item(0, 1).text()) + u'\N{DEGREE SIGN}')
+        self.labels5.setText("Joint theta Angle: " + str(self.tableWidget.item(0, 0).text()) + u'\N{DEGREE SIGN}')
+        self.labels6.setText("Joint alpha Angle: " + str(self.tableWidget.item(0, 1).text()) + u'\N{DEGREE SIGN}')
         self.slidercreated = True
         self.hslider.setEnabled(True)
         self.hslider2.setEnabled(True)
@@ -181,8 +180,8 @@ class main3d(Ui_MainWindow):
         if self.created:
             self.hslider.setProperty("value", self.tableWidget.item(self.index, 0).text())
             self.hslider2.setProperty("value", self.tableWidget.item(self.index, 1).text())
-            self.tableWidget.setItem(self.index, 0, QtWidgets.QTableWidgetItem(str(self.hslider.value())))
-            self.tableWidget.setItem(self.index, 1, QtWidgets.QTableWidgetItem(str(self.hslider2.value())))
+            # self.tableWidget.setItem(self.index, 0, QtWidgets.QTableWidgetItem(str(self.hslider.value())))
+            # self.tableWidget.setItem(self.index, 1, QtWidgets.QTableWidgetItem(str(self.hslider2.value())))
 
     def indexChanged2(self, index):
         if index == 1:
@@ -190,7 +189,7 @@ class main3d(Ui_MainWindow):
         else:
             self.kaki = False
 
-    def tableChanged(self, item):
+    def tableChanged(self):
         index = self.tableWidget.selectionModel().currentIndex().row()
         self.tableWidget.blockSignals(True)
         if self.count == 1:
@@ -210,8 +209,8 @@ class main3d(Ui_MainWindow):
 
         self.tableWidget.blockSignals(False)
         if self.created and index == self.index:
-            self.labels5.setText("Joint Angle: " + str(self.tableWidget.item(index, 0).text()) + u'\N{DEGREE SIGN}')
-            self.labels6.setText("Joint Angle: " + str(self.tableWidget.item(index, 1).text()) + u'\N{DEGREE SIGN}')
+            self.labels5.setText("Joint theta Angle: " + str(self.tableWidget.item(index, 0).text()) + u'\N{DEGREE SIGN}')
+            self.labels6.setText("Joint alpha Angle: " + str(self.tableWidget.item(index, 1).text()) + u'\N{DEGREE SIGN}')
             self.hslider.setProperty("value", self.tableWidget.item(index, 0).text())
             self.hslider2.setProperty("value", self.tableWidget.item(index, 1).text())
 
@@ -219,13 +218,13 @@ class main3d(Ui_MainWindow):
 
     def label1(self):
         self.tableWidget.blockSignals(True)
-        self.labels5.setText("Joint Angle: " + str(self.hslider.value()) + u'\N{DEGREE SIGN}')
+        self.labels5.setText("Joint theta Angle: " + str(self.hslider.value()) + u'\N{DEGREE SIGN}')
         self.tableWidget.setItem(self.index, 0, QtWidgets.QTableWidgetItem(str(self.hslider.value())))
         self.slider(self.index)
 
     def label2(self):
         self.tableWidget.blockSignals(True)
-        self.labels6.setText("Joint Angle: " + str(self.hslider2.value()) + u'\N{DEGREE SIGN}')
+        self.labels6.setText("Joint alpha Angle: " + str(self.hslider2.value()) + u'\N{DEGREE SIGN}')
         self.tableWidget.setItem(self.index, 1, QtWidgets.QTableWidgetItem(str(self.hslider2.value())))
         self.slider(self.index)
 

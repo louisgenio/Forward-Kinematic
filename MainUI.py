@@ -155,7 +155,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Forward Kinematic Simulator"))
         self.insertButton.setText(_translate("MainWindow", "Insert link"))
         self.labels1.setText(_translate("MainWindow", "alpha"))
         self.labels2.setText(_translate("MainWindow", "theta"))
@@ -164,15 +164,15 @@ class Ui_MainWindow(object):
         self.labels4.setText(_translate("MainWindow", "d"))
         self.createButton.setText(_translate("MainWindow", "Create Simulator"))
         item = self.tableWidget.horizontalHeaderItem(0)
-        item.setText(_translate("MainWindow", "alpha"))
-        item = self.tableWidget.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "theta"))
+        item = self.tableWidget.horizontalHeaderItem(1)
+        item.setText(_translate("MainWindow", "alpha"))
         item = self.tableWidget.horizontalHeaderItem(2)
         item.setText(_translate("MainWindow", "a"))
         item = self.tableWidget.horizontalHeaderItem(3)
         item.setText(_translate("MainWindow", "d"))
-        self.labels5.setText(_translate("MainWindow", "Joint Angle : "))
-        self.labels6.setText(_translate("MainWindow", "Joint Angle : "))
+        self.labels5.setText(_translate("MainWindow", "Joint theta Angle : "))
+        self.labels6.setText(_translate("MainWindow", "Joint alpha Angle : "))
         self.comboBox2.setCurrentText(_translate("MainWindow", "Tangan"))
         self.comboBox2.setItemText(0, _translate("MainWindow", "Tangan"))
         self.comboBox2.setItemText(1, _translate("MainWindow", "Kaki"))
