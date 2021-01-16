@@ -141,8 +141,8 @@ class main3d(Ui_MainWindow):
         self.hslider2.blockSignals(False)
 
     def draw(self):
-        Tm=calculator.dh_kine(self.dhTable, self.count)
-        ee=calculator.xyzpos(Tm, self.count)
+        Tm = calculator.dh_kine(self.dhTable, self.count)
+        ee = calculator.xyzpos(Tm, self.count)
         x,y,z = ee[0,:],ee[1,:],ee[2,:]
 
         self.MplWidget.canvas.axes.clear()

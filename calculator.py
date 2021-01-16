@@ -33,21 +33,11 @@ class calculator:
 
         for i in range(3, count*4, 4):
             if i == 3:
-                X = np.concatenate((x[:], [stack[0, i], stack[0, i]]))
-                Y = np.concatenate((y[:], [stack[1, i], stack[1, i]]))
-                Z = np.concatenate((z[:], [stack[2, i], stack[2, i]]))
+                x = np.concatenate((x[:], [stack[0, i], stack[0, i]]))
+                y = np.concatenate((y[:], [stack[1, i], stack[1, i]]))
+                z = np.concatenate((z[:], [stack[2, i], stack[2, i]]))
             else:
-                X = np.concatenate((x[:], [stack[0, i]]))
-                Y = np.concatenate((y[:], [stack[1, i]]))
-                Z = np.concatenate((z[:], [stack[2, i]]))
+                x = np.concatenate((x[:], [stack[0, i]]))
+                y = np.concatenate((y[:], [stack[1, i]]))
+                z = np.concatenate((z[:], [stack[2, i]]))
         return np.vstack((x, y, z))
-
-    def pos2base(Q):
-        X,Y,Z=Q[0,:],Q[1,:],Q[2,:]
-        pos = []
-        for i in range(Q):
-            pos = np.array([X[i]], Y[i]. Z[i])
-        return pos
-
-    def __getitem__(self, item):
-        return dhTable
