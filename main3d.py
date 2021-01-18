@@ -143,6 +143,9 @@ class main3d(Ui_MainWindow):
         Tm = calculator.dh_kine(self.dhTable, self.count)
         ee = calculator.xyzpos(Tm, self.count)
         x,y,z = ee[0,:],ee[1,:],ee[2,:]
+        print(x)
+        print(y)
+        print(z)
 
         self.MplWidget.canvas.axes.clear()
         self.MplWidget.canvas.axes.plot(x, y, z, marker='o', color='green', linewidth=4, markersize=10)

@@ -16,7 +16,6 @@ class calculator:
                              [np.sin(dhTable[i, 0]), np.cos(dhTable[i, 0]) * np.cos(dhTable[i, 1]), -np.cos(dhTable[i, 0]) * np.sin(dhTable[i, 1]), dhTable[i, 2] * np.sin(dhTable[i, 0])],
                              [0, np.sin(dhTable[i, 1]), np.cos(dhTable[i, 1]), dhTable[i, 3]],
                              [0, 0, 0, 1]])
-                print(i)
                 if i == 0:
                     Matrix = T
                     stack = T
